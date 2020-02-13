@@ -1,14 +1,14 @@
 const http = require('http');
 const fs = require('fs')
+const htmlHome = fs.readFileSync('./home.html')
 
 const hostname = '172.16.16.189';
-const port = 3000;
+const port = 6969;
 
 const server = http.createServer((req, res) => {
-  const html
   res.statusCode = 200;
   res.setHeader('Content-Type', 'text/html');
-  res.write('<h1>Haha Funny</h1>');
+  res.write(htmlHome);
   res.end()
 });
 
